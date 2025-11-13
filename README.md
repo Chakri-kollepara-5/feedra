@@ -30,7 +30,7 @@ It allows users to upload leftover food, notify NGOs instantly, and track pickup
 
 🚀 Live Demo
 App	Link
-🌱 Feedra Live	https://feedra-jet.vercel.app/
+🌱 Feedra Live	https://feedrabite.vercel.app
 
 🍽️ HostelBite Integration	Add your URL here
 ✨ Features
