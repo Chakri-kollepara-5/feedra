@@ -103,7 +103,7 @@ const CreateDonationModal: React.FC<CreateDonationModalProps> = ({ onClose, onSu
         description: formData.description,
         quantity: parseFloat(formData.quantity),
         location: formData.location,
-        expiryDate: expiryDate.toISOString(), // Ensure ISO string format
+        expiryDate: expiryDate.toISOString(), 
         contactInfo: formData.contactInfo,
         donorId: user.uid,
         donorName: user.displayName || user.email?.split('@')[0] || 'Anonymous',

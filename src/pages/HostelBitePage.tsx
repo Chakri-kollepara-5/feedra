@@ -80,16 +80,10 @@ const HostelBitePage: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 Launch HostelBite Instantly
               </h2>
+
               <p className="text-gray-600 mb-6">
                 Access the full HostelBite experience directly within Feedra
               </p>
-              <button
-                onClick={openHostelBite}
-                className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto transform hover:scale-105"
-              >
-                <Utensils className="h-6 w-6" />
-                <span>Open HostelBite 🚀</span>
-              </button>
             </div>
           </div>
 

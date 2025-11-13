@@ -1,8 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import ChatAssistButton from "./components/ChatAssistButton";
+import Footer from "./components/Footer"
+
 import { AuthProvider, useAuth } from './context/AuthContext';
+
+// Components
 import Navigation from './components/Navigation';
+
+// Pages
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
@@ -14,6 +21,8 @@ import SettingsPage from './pages/SettingsPage';
 import HostelBitePage from './pages/HostelBitePage';
 import PaymentsPage from './pages/PaymentsPage';
 
+
+// ------------------ ROUTE GUARDS ------------------
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
@@ -43,78 +52,120 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return user ? <Navigate to="/dashboard" /> : <>{children}</>;
 };
 
+
+// ------------------ APP CONTENT ------------------
+
 function AppContent() {
   const { user } = useAuth();
 
   return (
     <div className="min-h-screen bg-gray-50">
+      
+      {/* Navigation (Only when logged in) */}
       {user && <Navigation />}
-      
+
+      {/* Main Routes */}
       <Routes>
+
         <Route path="/" element={user ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
-        
-        <Route path="/login" element={
-          <PublicRoute>
-            <LoginPage />
-          </PublicRoute>
-        } />
-        
-        <Route path="/register" element={
-          <PublicRoute>
-            <RegisterPage />
-          </PublicRoute>
-        } />
-        
-        <Route path="/reset-password" element={
-          <PublicRoute>
-            <ResetPasswordPage />
-          </PublicRoute>
-        } />
-        
-        <Route path="/dashboard" element={
-          <ProtectedRoute>
-            <DashboardPage />
-          </ProtectedRoute>
-        } />
-        
-        <Route path="/donations" element={
-          <ProtectedRoute>
-            <DonationsPage />
-          </ProtectedRoute>
-        } />
-        
-        <Route path="/analytics" element={
-          <ProtectedRoute>
-            <AnalyticsPage />
-          </ProtectedRoute>
-        } />
-        
-        <Route path="/community" element={
-          <ProtectedRoute>
-            <CommunityPage />
-          </ProtectedRoute>
-        } />
-        
-        <Route path="/settings" element={
-          <ProtectedRoute>
-            <SettingsPage />
-          </ProtectedRoute>
-        } />
-        
-        <Route path="/hostelbite" element={
-          <ProtectedRoute>
-            <HostelBitePage />
-          </ProtectedRoute>
-        } />
-        
-        {/* Catch all route */}
+
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <LoginPage />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/register"
+          element={
+            <PublicRoute>
+              <RegisterPage />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/reset-password"
+          element={
+            <PublicRoute>
+              <ResetPasswordPage />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <DashboardPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/donations"
+          element={
+            <ProtectedRoute>
+              <DonationsPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/analytics"
+          element={
+            <ProtectedRoute>
+              <AnalyticsPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/community"
+          element={
+            <ProtectedRoute>
+              <CommunityPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <SettingsPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/hostelbite"
+          element={
+            <ProtectedRoute>
+              <HostelBitePage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/payments"
+          element={
+            <ProtectedRoute>
+              <PaymentsPage />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* 404 fallback redirect */}
         <Route path="*" element={<Navigate to="/" />} />
+
       </Routes>
-      <Routes>
-  {/* ...other routes */}
-  <Route path="/payments" element={<PaymentsPage />} />
-</Routes>
-      
+
+
+      {/* Toast Notifications */}
       <Toaster 
         position="top-right"
         toastOptions={{
@@ -125,23 +176,27 @@ function AppContent() {
           },
           success: {
             duration: 3000,
-            iconTheme: {
-              primary: '#10B981',
-              secondary: '#fff',
-            },
+            iconTheme: { primary: '#10B981', secondary: '#fff' },
           },
           error: {
             duration: 4000,
-            iconTheme: {
-              primary: '#EF4444',
-              secondary: '#fff',
-            },
+            iconTheme: { primary: '#EF4444', secondary: '#fff' },
           },
         }}
       />
+      {user && <ChatAssistButton />}
+      
+      <Footer />
+
+
+
+
     </div>
   );
 }
+
+
+// ------------------ ROOT APP WRAPPER ------------------
 
 function App() {
   return (
