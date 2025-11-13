@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import ChatAssistButton from "./components/ChatAssistButton";
+import ChatAssistButton from "./components/ChatAssistButtonwhatsapp";
 import Footer from "./components/Footer"
 
 import { AuthProvider, useAuth } from './context/AuthContext';

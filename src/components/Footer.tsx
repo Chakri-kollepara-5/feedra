@@ -36,7 +36,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li><a href="/dashboard" className="hover:underline">Dashboard</a></li>
             <li><a href="/hostelbite" className="hover:underline">Meals</a></li>
-            <li><a href="https://feedra.netlify.app" target="_blank" className="hover:underline">Feedra</a></li>
+            <li><a href="https://feedra-jet.vercel.app/" target="_blank" className="hover:underline">Feedra</a></li>
             <li><a href="/settings" className="hover:underline">Settings</a></li>
           </ul>
         </div>
