@@ -10,6 +10,9 @@ import HostelBiteSection from '../components/HostelBiteSection';
 import DonationPaymentSection from '../components/DonationPaymentSection';
 import HostelMealBooking from '../components/HostelMealBooking';
 import toast from 'react-hot-toast';
+import FoodWastagePrediction from '../components/FoodWastagePrediction';
+
+
 
 const DashboardPage: React.FC = () => {
   const { user } = useAuth();
@@ -175,6 +178,12 @@ const DashboardPage: React.FC = () => {
           </div>
           <HostelBiteSection />
         </div>
+        
+        {/* AI FOOD WASTAGE PREDICTION SECTION */}
+<div className="mb-8">
+  <FoodWastagePrediction />
+</div>
+
 
         {/* Hostel Meal Booking */}
         <div className="mb-6 sm:mb-8">
