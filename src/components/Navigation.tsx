@@ -55,7 +55,7 @@ const Navigation: React.FC = () => {
                 <div className="text-2xl">🍃</div>
               </div>
               <div>
-                <span className="text-xl font-bold bg-gradient-to-r mr-3 from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-gradient-to-r mr-3 pr-6 from-green-600 to-emerald-600 bg-clip-text text-transparent">
                   Feedra 🌱
                 </span>
                <div className="text-xs text-green-600 hidden md:block lg:hidden">Food Saver India 🇮🇳</div>
@@ -128,7 +128,7 @@ const Navigation: React.FC = () => {
                 <div className="text-xl">🍃</div>
               </div>
               <div>
-                <span className="text-lg font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                <span className="text-lg font-bold  bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                   Feedra 🌱
                 </span>
                <div className="text-xs text-green-600 md:hidden">Food Saver India 🇮🇳</div>

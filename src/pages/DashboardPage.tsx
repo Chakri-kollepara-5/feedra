@@ -178,7 +178,8 @@ const DashboardPage: React.FC = () => {
           </div>
           <HostelBiteSection />
         </div>
-        
+        git pull origin main --rebase
+
         {/* AI FOOD WASTAGE PREDICTION SECTION */}
 <div className="mb-8">
   <FoodWastagePrediction />
